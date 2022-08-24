@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package mathservice;
+
+service MathService {
+    rpc MakeOperation(OperationRequest) returns (OperationResponse) {}
+}
+
+message OperationRequest {
+    string operator = 1;
+    int64 number1 = 2;
+    int64 number2 = 3;
+}
+
+message OperationResponse {
+    int64 result = 1;
+}
